@@ -1,28 +1,15 @@
-name: ci
+name: GraphQL Query Workflow
+
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
   workflow_dispatch:
+  release:
+
 jobs:
-  build:
+  job1:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        foo: ['a','b','c','d','e','f','g','h']
-        bar: ['i','j','k','l','m','n','p','q']
-        random: ['s','t','u','v']
+    environment: prod
     steps:
-      - uses: actions/checkout@v3
-  build2:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        foo: ['a','b','c','d','e','f','g','h']
-        bar: ['i','j','k','l','m','n','p','q']
-        random: ['s','t','u','v']
-    steps:
-      - uses: actions/checkout@v3
-
-
+      - run: exit 0
