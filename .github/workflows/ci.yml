@@ -2,14 +2,14 @@ name: GraphQL Query Workflow
 
 on:
   push:
-    branches:
-      - main
   workflow_dispatch:
   release:
+    types:
+      - published
 
 jobs:
   job1:
     runs-on: ubuntu-latest
     environment: prod
     steps:
-      - run: exit 0
+      - uses: actions/checkout@v3
